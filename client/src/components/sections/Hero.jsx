@@ -105,24 +105,23 @@ export default function Hero() {
             Turning ad spend into 6-figure revenue since 2019.
           </motion.p>
 
-          {/* CTA */}
-          <motion.div variants={item} className="flex gap-3 flex-wrap">
-            <button
-              onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-              className="px-6 py-3 rounded-[10px] bg-[#6366F1] hover:bg-[#4F46E5] text-white text-sm font-semibold transition-all duration-200 hover:shadow-[0_8px_25px_rgba(99,102,241,.4)] hover:-translate-y-0.5"
-            >
-              View My Work
-            </button>
-            <a
-              href="/resume.pdf"
-              download
-              className="px-6 py-3 rounded-[10px] text-white text-sm font-medium transition-all duration-200 hover:bg-white/[0.08]"
-              style={{ background: 'rgba(255,255,255,.04)', border: '1px solid rgba(255,255,255,.1)' }}
-            >
-              Resume pdf
-            </a>
-          </motion.div>
-        </motion.div>
+         {/* CTA */}
+<motion.div variants={item} className="flex gap-3 flex-wrap">
+  <button
+    onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+    className="px-6 py-3 rounded-[10px] bg-[#6366F1] hover:bg-[#4F46E5] text-white text-sm font-semibold transition-all duration-200 hover:shadow-[0_8px_25px_rgba(99,102,241,.4)] hover:-translate-y-0.5"
+  >
+    View My Work
+  </button>
+  
+  <a
+    href="/resume.pdf"
+    download="My_Resume.pdf" 
+    className="px-6 py-3 rounded-[10px] text-white text-sm font-medium transition-all duration-200 bg-white/[0.04] border border-white/10 hover:bg-white/[0.08]"
+  >
+    Download Resume
+  </a>
+</motion.div>
 
         {/* Stats */}
         <motion.div
