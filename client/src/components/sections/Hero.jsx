@@ -119,7 +119,7 @@ export default function Hero() {
               className="px-6 py-3 rounded-[10px] text-white text-sm font-medium transition-all duration-200 hover:bg-white/[0.08]"
               style={{ background: 'rgba(255,255,255,.04)', border: '1px solid rgba(255,255,255,.1)' }}
             >
-              Download CV
+              
             </a>
           </motion.div>
         </motion.div>
