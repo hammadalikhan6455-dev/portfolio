@@ -113,10 +113,9 @@ export default function Hero() {
   >
     View My Work
   </button>
-  
-  <a
+ <a
     href="/resume.pdf"
-    download="My_Resume.pdf" 
+    download="resume.pdf" 
     className="px-6 py-3 rounded-[10px] text-white text-sm font-medium transition-all duration-200 bg-white/[0.04] border border-white/10 hover:bg-white/[0.08]"
   >
     Download Resume
