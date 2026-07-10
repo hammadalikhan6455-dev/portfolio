@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Design Tokens ─────────────────────────────────────── */
+:root {
+  --bg-base:      #07090F;
+  --bg-surface:   #0D1117;
+  --bg-elevated:  #131A27;
+
+  --accent:       #6366F1;
+  --accent-light: #818CF8;
+  --cyan:         #22D3EE;
+  --clay:         #C084FC;
+  --amber:        #FB923C;
+  --success:      #22C55E;
+
+  --glass-bg:     rgba(255,255,255,0.04);
+  --glass-border: rgba(255,255,255,0.08);
+  --glass-blur:   blur(20px);
+
+  --text-primary: #F8FAFC;
+  --text-muted:   #64748B;
+  --text-subtle:  #334155;
+
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body:    'Inter', sans-serif;
+  --font-mono:    'JetBrains Mono', monospace;
+
+  --radius-card:  16px;
+  --radius-chip:  100px;
+}
+
+/* ─── Base Reset ─────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg-base);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ─── Scroll Bar ─────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-base); }
+::-webkit-scrollbar-thumb { background: rgba(99,102,241,0.4); border-radius: 3px; }
+
+/* ─── Glass Component ────────────────────────────────────── */
+.glass {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-card);
+  backdrop-filter: var(--glass-blur);
+  transition: border-color 0.2s ease;
+}
+.glass:hover { border-color: rgba(255,255,255,0.14); }
+
+/* ─── Gradient Text ──────────────────────────────────────── */
+.grad-text {
+  background: linear-gradient(135deg, #6366F1, #22D3EE, #C084FC);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Section Label ──────────────────────────────────────── */
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+/* ─── Experience Card Scenes ─────────────────────────────── */
+.exp-scene { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+.exp-overlay { position: absolute; inset: 0; pointer-events: none; }
+.exp-content { position: relative; z-index: 3; padding: 20px 24px; }
+
+/* Bar chart animation helpers */
+.anim-bar {
+  border-radius: 4px 4px 0 0;
+  flex-shrink: 0;
+  width: 20px;
+  align-self: flex-end;
+  animation: barRise var(--bd) ease-in-out infinite var(--bdel);
+}
+@keyframes barRise {
+  0%, 100% { height: var(--bmin); }
+  50%       { height: var(--bmax); }
+}
+
+/* Floating money */
+.anim-money {
+  position: absolute;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--success);
+  animation: moneyFloat var(--md) ease-out infinite var(--mdel);
+}
+@keyframes moneyFloat {
+  0%   { opacity: 0; transform: translateY(0) scale(.7); }
+  20%  { opacity: .85; }
+  100% { opacity: 0; transform: translateY(-85px) scale(1); }
+}
+
+/* Floating hearts */
+.anim-heart {
+  position: absolute;
+  animation: heartUp var(--hd) ease-out infinite var(--hdel);
+  color: var(--hc);
+}
+@keyframes heartUp {
+  0%   { opacity: 0; transform: translateY(0) scale(.4) rotate(var(--hr)); }
+  18%  { opacity: .95; transform: translateY(-12px) scale(1.1) rotate(var(--hr)); }
+  100% { opacity: 0; transform: translateY(-95px) scale(.7) rotate(var(--hr)); }
+}
+
+/* Gear rotations */
+@keyframes gearClockwise { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes gearCounter   { from { transform: rotate(0deg); } to { transform: rotate(-360deg); } }
+
+/* Conveyor */
+@keyframes conveyorMove { 0% { transform: translateX(0); } 100% { transform: translateX(-40px); } }
+
+/* Bottle travel */
+@keyframes bottleTravel { 0% { transform: translateX(380px); } 100% { transform: translateX(-70px); } }
+
+/* Factory smoke */
+@keyframes smokeRise {
+  0%   { opacity: .45; transform: translate(0,0) scale(.5); }
+  100% { opacity: 0;   transform: translate(-4px,-40px) scale(1.8); }
+}
+
+/* Exhaust puffs */
+@keyframes exhaustPuff {
+  0%   { opacity: .55; transform: scale(.4) translate(0,0); }
+  100% { opacity: 0;   transform: scale(1.8) translate(-18px,-18px); }
+}
+
+/* Road scroll */
+@keyframes roadScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+/* Star twinkle */
+@keyframes twinkle { 0%, 100% { opacity: .15; } 50% { opacity: .85; } }
+
+/* Notification pop */
+@keyframes notifPop {
+  0%   { opacity: 0; transform: scale(.4) translateY(5px); }
+  25%  { opacity: .75; transform: scale(1) translateY(0); }
+  100% { opacity: 0; transform: scale(.9) translateY(-18px); }
+}
+
+/* Screen pulse */
+@keyframes screenPulse {
+  0%, 100% { background: rgba(192,132,252,.05); }
+  50%       { background: rgba(192,132,252,.14); }
+}
+
+/* Truck drive */
+@keyframes truckDrive { 0% { transform: translateX(-250px); } 100% { transform: translateX(1100px); } }
+
+/* Scroll reveal */
+@keyframes revealUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.reveal { opacity: 0; }
+.reveal.visible { animation: revealUp 0.6s ease forwards; }
+
+/* Orb float */
+@keyframes orbFloat {
+  0%,100% { transform: scale(1) translate(0,0); }
+  50%      { transform: scale(1.08) translate(8px,-12px); }
+}
+
+/* Availability blink */
+@keyframes availBlink { 0%,100% { opacity:1; } 50% { opacity:.3; } }
