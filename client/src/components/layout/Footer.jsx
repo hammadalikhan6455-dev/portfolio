@@ -28,17 +28,25 @@ export default function Footer() {
           </div>
 
           {/* Nav links */}
-          <nav className="flex flex-wrap gap-5">
-            {LINKS.map(l => (
-              <button
-                key={l.id}
-                onClick={() => scrollTo(l.id)}
-                className="text-xs text-[#475569] hover:text-white transition-colors font-medium"
-              >
-                {l.label}
-              </button>
-            ))}
-          </nav>
+          <div className="flex flex-col gap-4">
+            <nav className="flex flex-wrap gap-5">
+              {LINKS.map(l => (
+                <button
+                  key={l.id}
+                  onClick={() => scrollTo(l.id)}
+                  className="text-xs text-[#475569] hover:text-white transition-colors font-medium"
+                >
+                  {l.label}
+                </button>
+              ))}
+            </nav>
+            <a
+              href="/login"
+              className="inline-flex items-center justify-center rounded-[8px] border border-[rgba(255,255,255,.08)] bg-[rgba(255,255,255,.04)] px-4 py-2 text-xs font-medium text-white transition hover:border-[rgba(99,102,241,.4)] hover:bg-[rgba(99,102,241,.12)]"
+            >
+              Admin Login
+            </a>
+          </div>
 
           {/* Social icons */}
           <div className="flex gap-3">
