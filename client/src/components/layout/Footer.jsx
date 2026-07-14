@@ -9,8 +9,8 @@ const LINKS = [
 ]
 
 const SOCIALS = [
-  { Icon: Linkedin, href: 'https://www.linkedin.com/in/hammad-alikhan-b313692bb', label: 'LinkedIn' },
-  { Icon: Mail,     href: 'mailto:hammadalikhan6455@gmail.com',                   label: 'Email' },
+  { Icon: Linkedin, href: 'https://www.linkedin.com/in/hammad-ali-khan-b313692bb/', label: 'LinkedIn' },
+  { Icon: Mail,     href: 'hammadalikhan6455@gmail.com',                   label: 'Email' },
 ]
 
 export default function Footer() {
