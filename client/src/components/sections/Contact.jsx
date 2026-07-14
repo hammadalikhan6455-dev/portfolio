@@ -14,7 +14,7 @@ const SERVICES = [
 
 const CONTACT_INFO = [
   { icon: '✉️', label: 'Email',    value: 'hammadalikhan6455@gmail.com', color: '#6366F1', href: 'mailto:hammadalikhan6455@gmail.com' },
-  { icon: '🔗', label: 'LinkedIn', value: 'linkedin.com/in/hammad-alikhan…', color: '#22D3EE', href: 'https://www.linkedin.com/in/hammad-alikhan-b313692bb' },
+  { icon: '🔗', label: 'LinkedIn', value: 'linkedin.com/in/hammad-alikhan…', color: '#22D3EE', href: 'https://www.linkedin.com/in/hammad-ali-khan-b313692bb/' },
   { icon: '📍', label: 'Location', value: 'Multan, Punjab, Pakistan',  color: '#C084FC', href: null },
 ]
 
