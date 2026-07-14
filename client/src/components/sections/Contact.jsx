@@ -25,17 +25,10 @@ export default function Contact() {
   const onSubmit = async (data) => {
     setLoading(true)
     try {
-      // 1. Grab the live Render URL from your environment variables
-      const apiBaseUrl = import.meta.env.VITE_API_URL || '';
-      
-      // 2. Point the post request to the absolute Render URL
-      await axios.post(`${apiBaseUrl}/api/leads`, data)
-      
+      await axios.post('/api/leads', data)
       toast.success('Message sent! I\'ll get back to you within 24 hours.')
       reset()
-    } catch (error) {
-      // 3. Log the actual error to the console (vital for debugging!)
-      console.error("Submission Error:", error)
+    } catch {
       toast.error('Something went wrong. Please try again.')
     } finally {
       setLoading(false)
