@@ -64,9 +64,7 @@ export default function Footer() {
           style={{ borderTop: '1px solid rgba(255,255,255,.04)' }}
         >
           <span>© {new Date().getFullYear()} Hammad Ali. All rights reserved.</span>
-          <span style={{ color: '#1E3A5F' }}>
-            Built with <span style={{ color: '#6366F1' }}>React · Node.js · MongoDB</span> · Obsidian × Indigo Design System
-          </span>
+         
         </div>
       </div>
     </footer>
