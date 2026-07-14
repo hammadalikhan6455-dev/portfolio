@@ -11,7 +11,7 @@ import mongoose from 'mongoose'
 import bcrypt   from 'bcryptjs'
 import { User, Project, Experience, Skill } from '../models/index.js'
 
-const MONGO = process.env.MONGODB_URI || 'mongodb://localhost:27017/hammad-portfolio'
+const MONGO = process.env.MONGODB_URI || 'mongodb+srv://MY_Portfolio:Davidbills%40123@cluster0.30yyakw.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
 const EMAIL = process.env.ADMIN_EMAIL    || 'admin@hammad.dev'
 const PASS  = process.env.ADMIN_PASSWORD || 'Admin@1234!'
 
